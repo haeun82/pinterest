@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_KEY;
+  console.log(ACCESS_KEY);
 
 export const fetchImages = async ({ query = '', page = 1, perPage = 12 }) => {
   const endpoint = query
@@ -14,9 +15,11 @@ export const fetchImages = async ({ query = '', page = 1, perPage = 12 }) => {
       ...(query && { query }),
     },
     headers: {
-      'Accept-Version': 'v1', // 대문자 권장
+      'Accept-Version': 'v1', 
     }
   };
   const res = await axios.get(endpoint, config);
   return query ? res.data.results : res.data;
+  
+  
 };
