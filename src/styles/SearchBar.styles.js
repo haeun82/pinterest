@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StickyWrapper = styled.div`
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1001;
   background-color: white;
@@ -9,11 +9,43 @@ export const StickyWrapper = styled.div`
   display: flex;
   justify-content: center;
   border-bottom: 1px solid #eee;
-  width: 100%;  /* 화면 전체 너비 차지 */
+  width: 100%; 
 `;
+
+export const HeaderBar = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
+`;
+
+export const LogoArea = styled.div`
+  flex-shrink: 0; 
+  img {
+    width: 32px;
+    height: 32px;
+  }
+
+  @media (max-width: 480px) {
+    img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+`;
+
 
 export const StickySearchBar = styled.div`
   position: relative;
+  flex-grow: 1;
   width: 100%;
   max-width: 1100px;
   height: 44px;
@@ -22,6 +54,7 @@ export const StickySearchBar = styled.div`
   border-radius: 22px;
   display: flex;
   align-items: center;
+  margin: 0 auto;
 
   @media (max-width: 1200px) {
     max-width: 90%;
@@ -45,6 +78,8 @@ export const SearchIconWrapper = styled.div`
 `;
 
 export const SearchInputWrapper = styled.div`
+  position: relative;
+  flex-grow: 1;
   width: 100%;
 `;
 
@@ -54,15 +89,26 @@ export const SearchInput = styled.input`
   outline: none;
   font-size: 18px;
   background-color: transparent;
+  color: black;
   text-shadow: 0 0 0 black;
 
+  margin-left: 0;
+  padding-left: 10px;
   &::placeholder {
     color: #aaa;
+    text-shadow: none;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  &:focus::placeholder {
+    opacity: 0;
   }
 `;
+
 
 export const Container = styled.div`
   max-width: 1400px;
   margin: 0 auto;
-  padding: 20px 16px;
+  padding: 100px 16px 20px;
 `;

@@ -5,13 +5,17 @@ import { MdAddBox } from "react-icons/md";
 import { GoBell } from "react-icons/go";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
-
-
-
 function Header() {
   return (
     <Nav>
-      <Link to="/"><img src={logo} alt='핀터레스트 로고'/></Link>
+      <Link to="/">
+        <img 
+          src={logo} 
+          alt='핀터레스트 로고'
+          onClick={() => window.location.href='/'}
+          style={{ cursor: 'pointer' }}
+        />
+      </Link>
       <MdAddBox className='addicon'/>
       <GoBell className='updateicon'/>
       <IoChatbubbleEllipsesOutline className='chaticon' />
