@@ -67,7 +67,7 @@ function SearchBar() {
 
         console.log('요청 전:', { query: searchTerm, page});
 
-        const data = await fetchImages({ query: searchTerm, page });
+        const data = await fetchImages({ query: searchTerm , page });
         console.log('이미지 불러오기 성공', data);
         
         const results = Array.isArray(data) ? data : data.results || [];
