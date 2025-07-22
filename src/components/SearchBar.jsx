@@ -50,7 +50,7 @@ function SearchBar() {
     []
   );
 
-  // 검색어가 바뀌면 초기화
+  // 초기화
   useEffect(() => {
     setImages(([]));
     setPage(1);

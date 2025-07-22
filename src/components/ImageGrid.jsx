@@ -31,7 +31,7 @@ const ImageGrid = ({ images, lastImageRef }) => {
       className="my-masonry-grid"
       columnClassName="my-masonry-grid_column"
     >
-      {images?.map((img, index) => {
+      {images?.length > 0 && images.map((img, index) => {
         const isLast = index === images.length - 1;
 
         return (
